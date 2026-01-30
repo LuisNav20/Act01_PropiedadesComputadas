@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header {
+    text-align: center;
+    background-image: url('../Images/fondo4.jpg');
+    background-size: cover;
+    padding: 80px;
+    color: white;
+    font-family: "Limelight", sans-serif;
+}
+h1 {
+    font-size: 60px;
+    text-shadow: 2px 2px 4px #666666;
+}
+h4 {
+    font-family: "limelight", sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px #444444;
+}
+h3{
+    font-family: "Amaranth", sans-serif;
+    margin: 15px;
+    text-align: center;
+    font-size: 40px;
+}
+body{
+    background: linear-gradient(to bottom, #000000, #525252, #919191);
+    color:white
+}
+#newClient{
+    border: 2px solid aliceblue;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}   
+select, input{
+    margin: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-family: "Quicksand", sans-serif;
+}
+#add{
+    background-color: #000000;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+.error{
+    background-color: #000000;
+    border: 1px solid #444444;
+    padding: 8px;
+    border-radius: 15px;
+}
+.yes{
+    background-color: #000000;
+    border: 1px solid #444444;
+    padding: 8px;
+    border-radius: 15px;
+}
+#listClients{
+    margin-top: 30px;
+    border: 2px solid aliceblue;
+    padding: 10px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Poiret One", sans-serif;
+    font-size: 20px;
+}
+button{
+    background-color: #000000;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+#Resumen{
+    border: 2px solid aliceblue;
+    margin-top: 30px;
+    padding: 10px;
+    font-family: "Poiret One", sans-serif;
+    font-size: 20px;
+}
