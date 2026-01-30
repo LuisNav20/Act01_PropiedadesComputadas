@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>LuisNavarroEstrada-AgendaDeClientes-PropiedadesComputadas</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Limelight&family=Poiret+One&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+<div id="componente">
+    
+    <header>
+        <h1>Agenda de Clientes</h1>
+        <hr>
+        <h4>----------LuisCreators----------</h4>
+    </header>
+    
+    
+    <article id="newClient">
+        <h3>Nuevo Cliente</h3>
+        <input type="text" placeholder="Nombre" v-model="nuevoNombre">
+        <input type="text" placeholder="E-mail" v-model="nuevoContacto">
+
+        <select v-model="nuevoServicio">
+            <option disabled value="">Seleccione un servicio</option>
+            <option>Campaña de Marketing</option>
+            <option>Branding</option>
+            <option>Publicidad Digital</option>
+            <option>Creación de sitio web</option>
+        </select>
+
+        <button @click="agregarCliente" id="add"> Agregar cliente </button>
+        <p v-if="error" class="error">Debes llenar todos los campos</p>
+        <p v-else class="yes">Todo listo para el registro</p>
+    </article>
+
+    <hr>
+
+    
+    <article id="listClients">
+        <h3>Lista de Clientes</h3>
+
+        <table v-show="clientes.length > 0">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Contacto</th>
+                    <th>Servicio</th>
+                    <th>Mensajes</th>
+                    <th>Llamadas</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(cliente, index) in clientes" :key="index">
+                    <td>{{ cliente.nombre }}</td>
+                    <td>{{ cliente.contacto }}</td>
+                    <td>{{ cliente.servicio }}</td>
+
+                    <td>
+                        <button @click="cliente.mensajes++" :disabled="cliente.mensajes == 20">+</button>
+                        {{ cliente.mensajes }}
+                        <button @click="cliente.mensajes--" :disabled="cliente.mensajes == 0">-</button>
+                    </td>
+
+                    <td>
+                        <button @click="cliente.llamadas++" :disabled="cliente.llamadas == 20">+</button>
+                        {{ cliente.llamadas }}
+                        <button @click="cliente.llamadas--" :disabled="cliente.llamadas == 0">-</button>
+                    </td>
+
+                    <td>
+                        <button @click="eliminarCliente(index)" id="btnEliminar">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p v-show="clientes.length == 0">Aún no hay clientes registrados</p>
+    </article>
+
+    <hr>
+
+    
+    <article id="Resumen">
+        <h3>Información clientes</h3>
+        <p>Total de clientes: {{ totalClientes }}</p>
+        <p>Total de mensajes: {{ totalMensajes }}</p>
+        <p>Total de llamadas: {{ totalLlamadas }}</p>
+    </article>
+</div>
+
+<script src="../JS/Vuejs.js"></script>
+<script src="../JS/main.js"></script>
+
+</body>
+</html>
